@@ -1,0 +1,296 @@
+{
+  "languageModel": {
+    "types": [
+      {
+        "name": "answerSlot",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "rick",
+              "synonyms": [
+                "rick grimes"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "tyrese",
+              "synonyms": [
+                "tyrese williams"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "andrea",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "judith",
+              "synonyms": [
+                "judith grimes"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "glenn",
+              "synonyms": [
+                "glenn rhee"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "otis",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "little ass kicker",
+              "synonyms": [
+                "ass kicker",
+                "lil ass kicker"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "carol",
+              "synonyms": [
+                "carol peltier"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "hershel",
+              "synonyms": [
+                "hershel greene"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "ron",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "jesus",
+              "synonyms": [
+                "paul rovia",
+                "paul"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "veterinarian",
+              "synonyms": [
+                "animal doctor",
+                "veterinary doctor",
+                "veterinary"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "morgan",
+              "synonyms": [
+                "morgan jones"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "pizza delivery boy",
+              "synonyms": [
+                "pizza guy",
+                "pizza boy",
+                "pizza delivery guy",
+                "pizza man"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "georgia",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "baseball bat",
+              "synonyms": [
+                "bat",
+                "lucille",
+                "baseball"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "beth",
+              "synonyms": [
+                "beth greene"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "sherry",
+              "synonyms": [
+                "dwight's wife"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "zookeeper",
+              "synonyms": [
+                "zoo keeper",
+                "zoo"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "decisionSlot",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "Yes",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "No",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Yeah",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Naah",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Yup",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Nope",
+              "synonyms": []
+            }
+          }
+        ]
+      }
+    ],
+    "intents": [
+      {
+        "name": "AMAZON.CancelIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.HelpIntent",
+        "samples": [
+          "i need help",
+          "help me alexa",
+          "help me",
+          "please help",
+          "help",
+          "alexa help"
+        ]
+      },
+      {
+        "name": "AMAZON.StopIntent",
+        "samples": []
+      },
+      {
+        "name": "answerIntent",
+        "samples": [
+          "answer is {answer}",
+          "My answer is {answer}",
+          "{answer} is answer",
+          "The answer is {answer}",
+          "{answer}"
+        ],
+        "slots": [
+          {
+            "name": "answer",
+            "type": "answerSlot"
+          }
+        ]
+      },
+      {
+        "name": "quizIntent",
+        "samples": [
+          "{decision}",
+          "Yeah ready",
+          "ready",
+          "I'm ready"
+        ],
+        "slots": [
+          {
+            "name": "decision",
+            "type": "decisionSlot"
+          }
+        ]
+      },
+      {
+        "name": "UnhandledIntent",
+        "samples": [
+          "asdsadasdshas",
+          "asjdjads adsjads",
+          "basd basd",
+          "ads gweriwsx adwq",
+          "the walking dead",
+          "the dead quiz"
+        ],
+        "slots": []
+      }
+    ],
+    "invocationName": "the walking dead quiz"
+  }
+}
