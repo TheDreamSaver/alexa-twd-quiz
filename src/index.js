@@ -1,6 +1,7 @@
 "use strict";
 
 var Alexa = require("alexa-sdk");
+var APP_ID = "amzn1.ask.skill.0f1e7fba-e6ca-4a59-8adb-56bc3b1a7e05"
 
 const twd = [
     {
@@ -170,7 +171,7 @@ var handlers = {
     },
    "LaunchRequest": function () {
     i=0; j=0;
-    this.response.speak("Have you ever had to kill people because they had already killed your friends and were coming for you next? Have you ever done things that made you feel afraid of yourself afterward? Have you ever been covered in so much blood that you didn\'t know if it was yours or walkers\' or your friends\'? Welcome to The Walking Dead Quiz. No one gets to clock out today. And, hell, this is a quiz people are gonna talk about. So, would you like to go for a supply run of quiz?").listen("Ask for help if not sure what to do!"); 
+    this.response.speak("Have you ever had to kill people because they had already killed your friends and were coming for you next? Have you ever done things that made you feel afraid of yourself afterward? Have you ever been covered in so much blood that you didn\'t know if it was yours or walkers\' or your friends\'?<break time='1000ms'/> Welcome to The Walking Dead Quiz. No one gets to clock out today. And hell, this is a quiz people are gonna talk about. So, would you like to go for a supply run of quiz?").listen("Ask for help if not sure what to do!"); 
     this.emit(":responseReady");
    },
     'AMAZON.HelpIntent': function () {
@@ -204,6 +205,7 @@ exports.handler = function(event, context, callback) {
 
 // Set up the Alexa object
 var alexa = Alexa.handler(event, context); 
+alexa.appId = APP_ID;
 
 // Register Handlers
 alexa.registerHandlers(handlers); 
