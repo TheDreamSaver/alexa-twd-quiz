@@ -41,7 +41,7 @@ const twd = [
     {
         question: "Who killed and burned Karen and David in prison in season four?",
         answer: 'carol',
-        death: "told you to look at the flowers and shot by carol"
+        death: "told to look at the flowers and shot by carol"
     },
     {
         question: "Who does the governor executes?",
@@ -110,7 +110,7 @@ var i = 0;
 var j = 0;
 var handlers = {
    "quizIntent": function () {
-       var mydecision = this.event.request.intent.slots.decision.value;
+       var mydecision = slotValue(this.event.request.intent.slots.decision);
        if(mydecision=='no'||mydecision=='nope'||mydecision=='naah'){
         this.response.speak("Well, pardon me young man, excuse the crap out of my godamn French, but did you just choose to not play the game!");
         this.emit(":responseReady");
@@ -130,7 +130,7 @@ var handlers = {
    },
     
     "answerIntent": function () {  
-          var myanswer = this.event.request.intent.slots.answer.value;
+          var myanswer = slotValue(this.event.request.intent.slots.answer);
            
           if(myanswer!=twd[i].answer){
               var x = twd[i].answer;
@@ -187,6 +187,16 @@ var handlers = {
     },
 
 };
+
+function slotValue(slot, useId){
+    let value = slot.value;
+    let resolution = (slot.resolutions && slot.resolutions.resolutionsPerAuthority && slot.resolutions.resolutionsPerAuthority.length > 0) ? slot.resolutions.resolutionsPerAuthority[0] : null;
+    if(resolution && resolution.status.code == 'ER_SUCCESS_MATCH'){
+        let resolutionValue = resolution.values[0].value;
+        value = resolutionValue.id && useId ? resolutionValue.id : resolutionValue.name;
+    }
+    return value;
+}
 
 
 // This is the function that AWS Lambda calls every time Alexa uses your skill.
